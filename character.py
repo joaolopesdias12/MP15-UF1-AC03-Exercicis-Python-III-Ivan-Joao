@@ -26,10 +26,29 @@ class character:
     @property
     def birth_year(self):
         return self._birth_year
-    
+
+
     def fromDict(obj): 
         return character(obj["edited"], obj["name"], obj["created"],
                          obj["gender"], obj["skin_color"], obj["hair_color"],
                          obj["height"], obj["eye_color"], obj["mass"],
                          obj["homeworld"], obj["birth_year"])
+    
+    
+    def toDict(self):
+        return {self.name : {
+        "edited": self._edited,
+        "name": self._name,
+        "created": self._created,
+        "gender": self._gender,
+        "skin_color": self._skin_color,
+        "hair_color": self._hair_color,
+        "height": self._height,
+        "eye_color": self._eye_color,
+        "mass": self._mass,
+        "homeworld": self._homeworld,
+        "birth_year": self._birth_year,
+        }}
+
+    
 
